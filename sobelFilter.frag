@@ -38,15 +38,9 @@ void main() {
 		sampleTex[i] = vec3(texture(screenTexture, TexCoords.st + offsets[i]));
 	}
 
-	// vec3 col = vec3(0.0);
-	// vec3 row = vec3(0.0);
-
 	float sumX = 0.0;
 	float sumY = 0.0;
 	for(int i = 0; i < 9; ++i) {
-		// col += sampleTexX[i] * sobelX[i];
-		// row += sampleTexY[i] * sobelY[i];
-
 		sumX += dot(sampleTex[i], vec3(0.2126, 0.7152, 0.0722)) * sobelX[i];
 		sumY += dot(sampleTex[i], vec3(0.2126, 0.7152, 0.0722)) * sobelY[i];
 	}
